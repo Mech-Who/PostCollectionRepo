@@ -9,7 +9,7 @@ summary: 开源项目 Graft（NanoNets 团队）用 Tree-sitter 静态分析毫�
 source_url: https://mp.weixin.qq.com/s/KvePCTm5GUhEQ_LQ4FgdIQ
 source: weixin
 status: 📥已采集
-sync_si: ❌未同步
+sync_si: ✅已同步
 ---
 
 > **摘要：** 秋哥实测 Graft——一个给 AI 编程 Agent 建立"代码档案"的开源工具。它用 Tree-sitter 静态解析出代码中的函数、类与依赖关系，生成 `.graft/` 目录下的 Markdown 本地地图，Agent 开启新会话时优先读地图，跳过盲目的试探性搜索。官方基准：工具调用减 46%、Token 减 42%、SWE-bench 通过率 65%→75%。核心边界：检索是纯确定性的 TF-IDF/BM25 词汇重叠（无向量嵌入、无数据库），匹配分低于阈值时直接放弃注入——所以它只对已索引的本地代码库有效，探索新业务/新 SDK 时帮不上忙。
