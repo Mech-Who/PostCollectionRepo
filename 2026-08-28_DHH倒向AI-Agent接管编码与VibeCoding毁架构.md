@@ -9,7 +9,7 @@ summary: Ruby on Rails 之父 DHH 在 Lex Fridman 访谈中自述：过去两个
 source_url: https://mp.weixin.qq.com/s/zNoh0aWvbrWPL94eNxMI5g
 source: weixin
 status: 📥已采集
-sync_si: ❌未同步
+sync_si: ✅已同步
 ---
 
 > **摘要：** DHH 从「13 个月前排斥 AI 补全」走到「新增代码 100% 交给 Agent」。他给出三条工程判断：①实现权下放、判断权不下放——模型层和关键业务逻辑仍逐行审查，Neovim 从写代码变成浏览 diff；②每个 PR 都说得通、系统却被改坏——Vibe Coding 让局部完成加速，但改动之间缺共同架构约束，重复逻辑/隐性依赖/风格分裂要到后续迭代才一起爆发，解法是把架构审查提前到任务拆分阶段；③代码行数是愚蠢的指标，衡量标准回归产品（问题是否解决、是否可维护、事故率、交付周期）。开发者价值向「定义问题、约束边界、验收结果」两端迁移，机械式编码工序正在被模型取代。

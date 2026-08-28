@@ -9,7 +9,7 @@ summary: 腾讯云数据库在 DTCC 大会上发布面向 AI Agent 时代的数�
 source_url: https://mp.weixin.qq.com/s/bIAehwHtX2eEHZnrE8Gabg
 source: weixin
 status: 📥已采集
-sync_si: ❌未同步
+sync_si: ✅已同步
 ---
 
 > **摘要：** 腾讯云数据库发布 TDSQL Nexa，把数据库从「服务人和预设流程」推进到「服务 Agent」——Agent 时代数据请求由模型自主生成，调用时机、访问范围、资源需求都不可预测。针对生产级 Agent 的「失忆、资源窒息、自我进化困难」三类问题，Nexa 提供开放引擎架构（事务/搜索/AI计算/分析四引擎）+ 统一数据平面（一张多模表、一套 SQL，内部路由编排）。两大现实难题的解法：老数据可逻辑纳管联邦计算（不复制）或旁路传输到对象存储；Nexa Knowledge 扫描数据资产做建模+业务语义（解决统计口径），Nexa Catalog 做细粒度权限。配套产品补齐「存储/试错/记忆/自治」：TDSQL Boundless 多模态统一存储、TDSQL-C 用 Branch 秒级克隆+Serverless+多 Agent 沙箱把试错控制在独立环境、Agent Memory 渐进式记忆+团队记忆、DatabaseClaw 数据库自治（权限隔离+行为护栏，不可逆操作不开放给 Agent）。
