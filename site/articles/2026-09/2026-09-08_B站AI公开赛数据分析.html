@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>分析了150条B站视频之后，我发现了做内容做产品的制胜秘籍！</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-09/2026-09-08_B站AI公开赛数据分析.md" type="button">标为已读</button></nav><article data-key="2026-09/2026-09-08_B站AI公开赛数据分析.md"><div class="meta"><span>2026-09-08</span><span class="tag">AI 应用</span><span class="tag">深度</span></div><h1>分析了150条B站视频之后，我发现了做内容做产品的制胜秘籍！</h1><p class="article-summary">对 B 站 AI 公开赛 150 条视频的分析显示，投币率比播放量更接近真实认可，即开即用的轻量工具更容易获奖，多次发布也显著提高成功率。可靠结论依赖字段口径、作品级聚合、空值处理、抽样复核与可重跑脚本。</p><blockquote><strong>摘要：</strong> 对 B 站 AI 公开赛 150 条视频的分析显示，投币率比播放量更接近真实认可，即开即用的轻量工具更容易获奖，多次发布也显著提高成功率。可靠结论依赖字段口径、作品级聚合、空值处理、抽样复核与可重跑脚本。</blockquote>
+<h2>我的理解</h2>
+<blockquote>由小林生成，供小涵审阅修改</blockquote>
+<p>这篇文章的核心不是“投币率高就会获奖”，而是如何把模糊问题变成可审计的数据流程。视频和作品是不同分析单位，曝光和付出型互动也是不同层级指标。先写清口径、局限与人工复核规则，才能避免漂亮数字掩盖样本偏差；保留构建脚本则让假设变化后的重算成为常规操作。</p>
+<h2>关键要点</h2>
+<ul>
+<li><strong>指标分层</strong>：播放衡量被看到，投币及投币率更接近用户愿意付出的认可。</li>
+<li><strong>产品洞察</strong>：即开即用、立即可体验的轻量工具可能比复杂展示更能传递价值。</li>
+<li><strong>迭代效应</strong>：多次发布可视为量化试错和内部赛马，但相关性不能直接解释为因果。</li>
+<li><strong>数据工程</strong>：分离视频级与作品级表，记录字段口径、来源、异常与标注。</li>
+<li><strong>质量保障</strong>：空值不填 0，数据窗口不一致时降级问题，抽样复核并保存可重跑脚本。</li>
+</ul>
+<h2>原文</h2>
+<h1>分析了 150 条 B 站视频之后的发现</h1>
+<p>作者让编程 Agent ZCode 抓取 B 站 AI 创造公开赛热度榜前 150 条视频，补全播放、点赞、投币、收藏、时长、发布时间、分区、粉丝和合集等字段，最终筛出 52 个作品：17 个获奖、34 个未获奖。</p>
+<h2>三条洞察</h2>
+<ol>
+<li>播放中位数约 189 万对 51 万，不到 4 倍；投币中位数 8.2 万对 3700，差约 22 倍。播放说明被看到，投币代表用户愿意付出，产品分析也应关注真正有价值的指标。</li>
+<li>投币率超过 10% 的四个作品全部获奖。它们共同特点是点开就能玩的轻量小工具；易上手、可立即体验往往比看起来复杂更接近真实价值。</li>
+<li>更新比单发更有优势。多次发布的 12 个作品中 9 个获奖，只发一条的 39 个中仅 8 个获奖。量化试错相当于内部赛马。</li>
+</ol>
+<h2>可复用流程</h2>
+<p>先只做采集和数据清单，明确字段口径、可回答和不可回答的问题；再建立视频级、作品级、列口径与来源、坑与标注等表；空值留空不填 0；修改前提后在原表重算；每轮抽样用接口或脚本复核数字；保留构建脚本，方便下次重跑。数据窗口不重叠时要主动降级问题，疑似非参赛内容应单独标记供人工复核。</p>
+<h2>相关笔记</h2>
+<ul>
+<li>暂无已确认关联笔记。</li>
+</ul>
+<h2>Skill 转化评估</h2>
+<p>候选。文章给出了从字段设计、分层建表到抽样复核和可重跑脚本的完整数据分析流程，适合评估为内容平台数据研究 Skill；本次不创建或修改 Skill。</p><hr><a class="button" href="https://mp.weixin.qq.com/s/H7-G_vszhDe8tLaNuC4jZA" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>

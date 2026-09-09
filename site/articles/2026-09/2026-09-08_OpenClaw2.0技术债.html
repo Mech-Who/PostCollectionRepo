@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OpenClaw 2.0：欠下的技术债，这次连本带利还清</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-09/2026-09-08_OpenClaw2.0技术债.md" type="button">标为已读</button></nav><article data-key="2026-09/2026-09-08_OpenClaw2.0技术债.md"><div class="meta"><span>2026-09-08</span><span class="tag">AI 应用</span><span class="tag">深度</span></div><h1>OpenClaw 2.0：欠下的技术债，这次连本带利还清</h1><p class="article-summary">OpenClaw 2.0 把会话升级为可寻址、迁移和恢复的资源，并以 SQLite、Gateway 客户端与按需 Provider 包重塑架构。升级收益伴随数据迁移、权限边界和回滚复杂度，生产环境应坚持备份、诊断、分阶段验证与失败关闭。</p><blockquote><strong>摘要：</strong> OpenClaw 2.0 把会话升级为可寻址、迁移和恢复的资源，并以 SQLite、Gateway 客户端与按需 Provider 包重塑架构。升级收益伴随数据迁移、权限边界和回滚复杂度，生产环境应坚持备份、诊断、分阶段验证与失败关闭。</blockquote>
+<h2>我的理解</h2>
+<blockquote>由小林生成，供小涵审阅修改</blockquote>
+<p>这次重构的核心不是单点性能优化，而是把隐含在进程里的状态变成具有生命周期、权限和恢复语义的基础设施。真正值得复用的是升级设计原则：任何不可逆迁移都必须配套备份与修复工具；任何插件化都要同时解决来源、版本、能力和授权；任何“隐私模式”都必须明确其保护边界。</p>
+<h2>关键要点</h2>
+<ul>
+<li><strong>状态资源化</strong>：会话与工作区支持寻址、迁移、快照和恢复，SQLite 提供搜索与并发安全。</li>
+<li><strong>边界收敛</strong>：Control UI 只做 Gateway 客户端，编辑器与 Changes 面板不越界替代 IDE 或 Git。</li>
+<li><strong>插件治理</strong>：Provider 独立分发必须配套修复、迁移、版本展示及可执行来源授权。</li>
+<li><strong>安全与恢复</strong>：按入口、凭证、执行分层，关键策略采用 fail closed；升级前备份，升级后运行 doctor 并核对路由和会话。</li>
+<li><strong>适用场景</strong>：OpenClaw 生产部署、会话迁移、Provider 拆包和高密度 Cron 环境升级。</li>
+</ul>
+<h2>原文</h2>
+<h1>OpenClaw 2.0：欠下的技术债</h1>
+<p>2026 年 8 月 31 日 OpenClaw 发布 v2026.8.1（官方称 OpenClaw 2.0），合并 16000+ PR、933 位贡献者。文章重点分析架构变化及代价。</p>
+<h2>核心变化</h2>
+<ul>
+<li>会话从进程内状态变为可寻址、可迁移、可共享、可快照、可恢复并带访问控制的资源，工作区随会话迁移。</li>
+<li>会话与 transcript 迁入 SQLite，带来搜索、并发安全和恢复能力，但升级前必须使用 <code>openclaw backup sqlite</code> 创建可恢复备份，回滚不是简单复制文件。</li>
+<li>Control UI 退化为 Gateway 客户端，请求数从约 140 降至 45，启动从 1.6 秒降至 575 毫秒；文件编辑器和 Changes 面板明确保持边界，不取代 IDE 或 Git 客户端。</li>
+<li>官方 provider 拆为按需安装的独立包，必须配套 <code>update repair</code>、doctor 迁移、能力/来源/版本展示和可执行来源的显式授权。</li>
+<li>安全分为 Gateway 入口、凭证和执行三层；共享会话不是租户隔离，Incognito 只控制本地留存，消息仍会发送给模型 provider。</li>
+<li>Active Memory、Grounded dreaming 和自动自学习默认开启，但支持来源追溯、显式关闭和定点删除。</li>
+</ul>
+<h2>可靠性与升级</h2>
+<p>反复出现的工程模式是失败时可观测、可恢复、fail closed；<code>ask=off + askFallback=deny</code> 无法生成 allowlist 时直接拒绝。建议先备份、<code>openclaw doctor</code>、升级、<code>openclaw doctor --fix</code>，最后检查模型路由和 SQLite 会话。Cron 密集生产环境、受影响 provider 和需要旧版会话可读的部署应先在 staging 验证。</p>
+<h2>相关笔记</h2>
+<ul>
+<li>暂无已确认关联笔记。</li>
+</ul>
+<h2>Skill 转化评估</h2>
+<p>候选。文章包含 OpenClaw 2.0 升级与迁移的明确检查步骤，并涉及特定工具命令；适合评估为 OpenClaw 升级守护 Skill，但本次按要求不创建或修改 Skill。</p><hr><a class="button" href="https://mp.weixin.qq.com/s/2ZmmCQelWs3r77U34XrAYg" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>

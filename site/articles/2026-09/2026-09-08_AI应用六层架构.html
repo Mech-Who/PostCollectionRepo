@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI面试：如果让你从零开发一个 AI 应用，你会怎么做？</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-09/2026-09-08_AI应用六层架构.md" type="button">标为已读</button></nav><article data-key="2026-09/2026-09-08_AI应用六层架构.md"><div class="meta"><span>2026-09-08</span><span class="tag">AI 应用</span><span class="tag">深度</span></div><h1>AI面试：如果让你从零开发一个 AI 应用，你会怎么做？</h1><p class="article-summary">从零设计 AI 应用应先定义错误代价，再依次建设数据底座、上下文预算、确定性编排、评测闭环和可观测性。模型提供智能，Harness 通过权限、幂等、回滚、预算和持续回归把智能变成可信的线上系统。</p><blockquote><strong>摘要：</strong> 从零设计 AI 应用应先定义错误代价，再依次建设数据底座、上下文预算、确定性编排、评测闭环和可观测性。模型提供智能，Harness 通过权限、幂等、回滚、预算和持续回归把智能变成可信的线上系统。</blockquote>
+<h2>我的理解</h2>
+<blockquote>由小林生成，供小涵审阅修改</blockquote>
+<p>这套框架最重要的顺序是先确定风险，再决定自治程度。Copilot 与 Autonomous 不是 UI 差异，而是错误代价、权限和恢复责任完全不同的系统。评测集也不是收尾工作，而是所有优化是否有效的裁判；没有它，上下文、检索和模型调整都无法形成工程闭环。</p>
+<h2>关键要点</h2>
+<ul>
+<li><strong>风险先行</strong>：按错误代价决定人类确认、权限、回滚、幂等和告警要求。</li>
+<li><strong>数据与上下文</strong>：按语义切分并补齐元数据，对提示、工具、检索、历史和输出分配预算。</li>
+<li><strong>编排原则</strong>：步骤可枚举时优先确定性工作流；Agent 必须限制步数、token、超时并校验输入输出。</li>
+<li><strong>评测闭环</strong>：从线上 badcase 冷启动黄金集，覆盖组件、端到端与线上行为指标。</li>
+<li><strong>运营能力</strong>：区分 TTFT 与总时长，异步化长任务，保存完整运行快照以复现问题。</li>
+</ul>
+<h2>原文</h2>
+<h1>AI面试：如果让你从零开发一个 AI 应用，你会怎么做？</h1>
+<p>面试官问的是“设计一个系统”，而不是列出模型、向量库和 Agent 框架。没有评测集的 AI 应用，调参不叫优化，叫玄学。真正影响线上效果的往往不是模型，而是上下文组织、工具编排、失败兜底和度量，这一圈可以称为 Harness。</p>
+<h2>六层架构</h2>
+<ol>
+<li>先定义错误代价。Copilot 由人拍板，关注采纳率和修改率；Autonomous 直接执行，必须关注任务成功率、权限、幂等、回滚和告警。</li>
+<li>建立数据底座。PDF 要做版面识别，表格单独抽取；按语义边界切分，并补充来源、更新时间、业务域和适用人群等元数据。</li>
+<li>做上下文预算。系统提示、工具、检索片段、历史对话和输出预留分别分配预算；向量召回后重排，只取 Top 3-5；工具按意图动态挂载；历史对话压缩为事实清单。</li>
+<li>编排优先使用确定性工作流。只有步骤无法枚举时才使用 Agent。Agent 必须限制最大步数、token、超时，并以任务和步骤建立幂等键；外部内容视为不可信输入，输出还要经过 schema 和业务规则校验。</li>
+<li>建立评测闭环。组件级检查召回率，端到端检查任务成功率，线上观察点踩率、改写率和转人工率。从线上 badcase 冷启动黄金集，持续回归。</li>
+<li>控制成本、延迟和可观测性。压缩多轮上下文并利用 prompt caching；区分 TTFT 与总时长，长任务异步化；保存模型、prompt、检索片段、工具输入输出、耗时和 token 快照。</li>
+</ol>
+<h2>60 秒回答</h2>
+<p>模型只负责聪明，工程负责可信。先定错误代价，再做数据底座和上下文预算；编排上工作流优先，Agent 加步数、预算、超时、幂等及输入输出护栏；从 badcase 建评测集；最后算成本、压 TTFT、保留现场，确保线上问题可复现。</p>
+<h2>相关笔记</h2>
+<ul>
+<li>暂无已确认关联笔记。</li>
+</ul>
+<h2>Skill 转化评估</h2>
+<p>候选。六层架构具有明确顺序、重复使用价值和工程检查项，适合转化为 AI 应用设计评审 Skill；本次不创建或修改 Skill。</p><hr><a class="button" href="https://mp.weixin.qq.com/s/4Jje4HQ1nRrdx1DWV24IEg" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>

@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>揭秘｜数十亿场对局，会赢还不够？《洛克王国：世界》公开战斗AI</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-09/2026-09-08_洛克王国战斗AI.md" type="button">标为已读</button></nav><article data-key="2026-09/2026-09-08_洛克王国战斗AI.md"><div class="meta"><span>2026-09-08</span><span class="tag">游戏开发</span><span class="tag">深度</span></div><h1>揭秘｜数十亿场对局，会赢还不够？《洛克王国：世界》公开战斗AI</h1><p class="article-summary">《洛克王国：世界》用 PPO 自我博弈、分层状态编码、CTDE 和多头价值网络构建 PvE 战斗 AI。系统不只追求胜率，还通过信息边界、异常行为惩罚和奖励配置塑造可反制、可区分且不破坏沉浸感的 NPC。</p><blockquote><strong>摘要：</strong> 《洛克王国：世界》用 PPO 自我博弈、分层状态编码、CTDE 和多头价值网络构建 PvE 战斗 AI。系统不只追求胜率，还通过信息边界、异常行为惩罚和奖励配置塑造可反制、可区分且不破坏沉浸感的 NPC。</blockquote>
+<h2>我的理解</h2>
+<blockquote>由小林生成，供小涵审阅修改</blockquote>
+<p>游戏 AI 的目标函数必须包含体验，而非只包含胜负。把“沉浸感缺陷”显式定义为可惩罚行为，是将策划语言转化为训练信号的关键。CTDE 则兼顾训练效率和公平执行边界；多头价值网络让团队能诊断究竟是胜负、资源、技能选择还是克制关系出了问题。</p>
+<h2>关键要点</h2>
+<ul>
+<li><strong>分层表示</strong>：技能、精灵、阵容逐层编码，同时保留具体 ID 与语义类别以泛化新内容。</li>
+<li><strong>信息公平</strong>：训练价值网络可见完整状态，线上策略只读取玩家已公开信息。</li>
+<li><strong>体验奖励</strong>：胜负之外分解伤害、克制、技能质量、生命和资源，并惩罚 immersion bugs。</li>
+<li><strong>训练分布</strong>：真实阵容与设计阵容混合，用遗憾值提高困难阵容采样概率。</li>
+<li><strong>线上部署</strong>：复用自动化测试环境分布式训练，以 TFLite 和 CPU SDK 实现低于 1 毫秒推理及热更新。</li>
+</ul>
+<h2>原文</h2>
+<h1>揭秘：数十亿场对局，会赢还不够？</h1>
+<p>《洛克王国：世界》为 PvE 战斗引入深度强化学习，系统与游戏同期上线，已支撑数十亿场线上对局，覆盖数百名 NPC。目标不仅是获胜，还要让新手感到有趣、让熟练玩家能够练习反制，并让不同 NPC 呈现不同风格。</p>
+<h2>状态表示与信息边界</h2>
+<p>战斗状态包含回合、天气、双方阵容、精灵属性、技能、增益和效果等多层结构。团队采用逐层编码，把技能汇入精灵、精灵汇入阵容，再形成全局状态；同时保留技能具体 ID 与语义类别，使新技能可以参考同类技能。动态信息屏蔽保证模型只看到玩家已公开的信息。训练采用“集中训练、分散执行”（CTDE）：价值网络训练时读取完整状态，策略网络上线时遵守可见边界。技能使用和精灵出场/换位分别形成短期、长期历史序列。</p>
+<h2>奖励与风格</h2>
+<p>采用 PPO 自我博弈训练，并用多头价值网络分别评估胜负、伤害效率、系别克制、技能质量、生命值与资源变化。无意义换位、满能量继续聚能、换上低生命精灵等行为会受到惩罚，这类会破坏沉浸感的异常被称为 immersion bugs。通过不同奖励配置，可以训练均衡、进攻、防守等 NPC 风格；天气和共鸣魔法也有专门奖励。</p>
+<h2>训练、部署与迭代</h2>
+<p>训练池混合最新 PvE 设计阵容和真实测试阵容，再局部随机替换。按阵容“遗憾值”分配采样概率，失败率高的阵容获得更多训练。训练环境复用游戏自动化测试平台，分布式运行数千万场对局。线上由战斗服务器通过轻量 SDK 推理，模型和 NPC 参数可动态更新而无需重启。</p>
+<p>后续方向包括混合专家模型、平衡性分析、更多赛季和合作场景，以及模型轻量化。线上单次推理低于 1 毫秒，使用 TensorFlow Lite 和 CPU SDK。</p>
+<h2>相关笔记</h2>
+<ul>
+<li>暂无已确认关联笔记。</li>
+</ul>
+<h2>Skill 转化评估</h2>
+<p>候选。文章覆盖状态表示、信息边界、奖励拆解、采样和部署的完整战斗 AI 方法，可评估为强化学习战斗 AI 设计 Skill；本次不创建或修改 Skill。</p><hr><a class="button" href="https://mp.weixin.qq.com/s/VKGT7E8Oc9AzevxDsvgjPw" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>
