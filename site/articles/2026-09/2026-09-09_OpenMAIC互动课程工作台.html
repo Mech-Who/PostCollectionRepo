@@ -1,0 +1,46 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>清华开源的 Agent 交互学习神器，又登上 GitHub 热榜了。</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-09/2026-09-09_OpenMAIC互动课程工作台.md" type="button">标为已读</button></nav><article data-key="2026-09/2026-09-09_OpenMAIC互动课程工作台.md"><div class="meta"><span>2026-09-09</span><span class="tag">AI 应用</span><span class="tag">深度</span></div><h1>清华开源的 Agent 交互学习神器，又登上 GitHub 热榜了。</h1><p class="article-summary">清华团队开源的 OpenMAIC 已从多智能体互动课堂生成器升级为课程创作者的专业工作台。它把课程规划、页面制作、互动实验、旧 PPT 改造和个人教学风格复用组织成可持续迭代的 Agent 工作流，并用 20 多个教学 Skill 将费曼学习、螺旋式课程等方法显式封装。</p><blockquote><strong>摘要：</strong> 清华团队开源的 OpenMAIC 已从多智能体互动课堂生成器升级为课程创作者的专业工作台。它把课程规划、页面制作、互动实验、旧 PPT 改造和个人教学风格复用组织成可持续迭代的 Agent 工作流，并用 20 多个教学 Skill 将费曼学习、螺旋式课程等方法显式封装。</blockquote>
+<h2>我的理解</h2>
+<blockquote>由小林生成，供小涵审阅修改</blockquote>
+<p>OpenMAIC 有价值的地方不只是“一句话生成课件”，而是把课程制作从一次性生成改造成可反复沟通、规划、逐页修改和复用的工作台。教师仍掌握课程目标与判断，Agent 负责展开素材、页面和互动形式。</p>
+<p>教学 Skill 是整个产品的关键抽象。费曼学习、螺旋式课程、项目式学习和个人授课习惯被封装成可组合的生成约束，使同一份材料能够得到结构明显不同的课程。这比只更换提示词更容易复用、分享和持续修正。</p>
+<p>另一个务实之处是尊重已有资产。旧 PPT 不必废弃，可以保留页面和排版，让 Agent 补上讲解、聚光、语音、测验和互动；需要时再做深度重构。它降低了教师采用新工具的迁移成本。</p>
+<h2>关键要点</h2>
+<ul>
+<li><strong>工作台化</strong>：教师持续与 Agent 沟通，规划连续课程、整理材料、生成页面并逐页修改，而不是接受一次性结果。</li>
+<li><strong>互动表达</strong>：可生成三维可视化、模拟实验、知识游戏、思维导图和在线编程页面，把抽象知识转成可操作对象。</li>
+<li><strong>Skill 驱动</strong>：20 多个内置教学 Skill 改变课程结构，教师也能从自己的课程记录中创建个人 Skill。</li>
+<li><strong>旧资产增强</strong>：导入 PPTX 后尽量保留排版，再补充讲解、语音、提示、测验与互动页面。</li>
+<li><strong>风格提取</strong>：可从授权课堂录像或讲义中分析开场、举例、节奏和复盘习惯，用于生成新课程。</li>
+<li><strong>开放部署</strong>：支持云端模型 API、本地 Ollama 或 Lemonade，并可部署到 Vercel、Docker 或自有服务器。</li>
+</ul>
+<h2>原文整理</h2>
+<p>OpenMAIC 全称 Open Multi-Agent Interactive Classroom，由清华大学团队开源。项目最初定位为多 AI Agent 互动课堂生成器，现已升级为面向课程创作者的专业工作台。项目在 2026 年 3 月开源，文章发布时已获 3 万多个 GitHub Star，并受邀在联合国教科文组织巴黎总部展示 AI 教育智能体。</p>
+<h3>从主题生成互动课堂</h3>
+<p>用户输入主题或上传学习材料后，系统可以生成幻灯片、测验、互动实验和项目式学习任务。课堂中设置 AI 老师、助教和同学角色，可进行讲解、提问、讨论、白板绘图和公式推导。</p>
+<p>深度交互模式能够生成三维可视化、模拟实验、知识游戏、思维导图和在线编程页面。例如物理课程可以让学生调整参数并观察模拟结果，课程不再只是文字和静态图片的排列。</p>
+<h3>用 Skill 固化教学方法</h3>
+<p>工作台内置 20 多个教学 Skill。费曼学习法会先让学生解释概念，再通过追问寻找并补全理解缺口；螺旋式课程让核心概念在多次课程中重复出现，并逐步增加情境和难度；大师讲授 Skill 则强调连续讲授主线、较高信息密度和真实案例。</p>
+<p>教师还能把自己的教学流程整理为个人 Skill，供后续课程复用。由此，教学法从隐含在提示词或个人经验中的习惯，转化为可以选择、组合和改进的工作单元。</p>
+<h3>让旧课件继续产生价值</h3>
+<p>OpenMAIC 支持导入 PPTX，并尽量保留原页面与排版。教师可以逐页补充讲解、聚光提示、语音、测验和互动页面，也可以把整套课件作为素材重构成深度互动课堂。</p>
+<p>系统还可以在获得授权的前提下分析课堂录像或讲义中的开场方式、举例顺序、讲解节奏、复盘方式，以及语言和画面的配合，再用这些风格特征生成新课程。</p>
+<h3>部署方式</h3>
+<p>本地运行需要 Node.js 22.19.0 以上和 pnpm 10.28.0。克隆仓库并安装依赖后，复制环境变量示例并配置模型服务，再运行开发服务器。系统可接云端 API，也支持本地 Ollama 或 Lemonade；长期运行可构建生产版本，并部署到 Vercel、Docker 或自有服务器。语音、图像和文档解析功能需要额外配置。</p>
+<p>开源地址：<a href="https://github.com/THU-MAIC/OpenMAIC" target="_blank" rel="noreferrer">https://github.com/THU-MAIC/OpenMAIC</a></p>
+<h2>相关笔记</h2>
+<ul>
+<li>[[12万星Skill教你学会任何东西]]：都把学习方法拆成可复用的结构化流程。</li>
+<li>[[AI应用六层架构]]：OpenMAIC 是多模型、多工具和工作流集成的具体应用案例。</li>
+</ul>
+<h2>Skill 转化评估</h2>
+<p>候选。文章展示了“把专业方法封装为 Skill，再由 Agent 工作台组合”的通用产品模式，但缺少个人 Skill 的具体格式与评测机制，本次先形成 K-Fragment，不直接创建 Skill。</p><hr><a class="button" href="https://mp.weixin.qq.com/s/COWd4z9rw3RgX5Y041-HZA" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>
