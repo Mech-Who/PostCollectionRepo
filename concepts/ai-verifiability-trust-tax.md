@@ -30,6 +30,7 @@ AI 扩大低成本供给后，观众不会平均降低判断标准，反而会�
 ## connections
 
 - [[ai-boundary-first-intelligence]]：可验证证据依赖清晰的信息、权限和状态边界；两者共同把不可预测能力变成可运营系统。
+- [[ai-cognitive-bandwidth-first]]：压缩与隐藏信息需要原件、基准和契约作为复核入口，避免降低可见性后抬高信任成本。
 
 ## questions
 

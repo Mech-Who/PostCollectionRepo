@@ -30,6 +30,7 @@ Copilot 与 Autonomous 的差别不在界面，而在错误由谁承担。错误
 ## connections
 
 - [[ai-verifiability-trust-tax]]：边界与状态设计产生可验证证据；证据反过来降低执行和创作中的信任成本。
+- [[ai-cognitive-bandwidth-first]]：先以安全和恢复边界限定可省略范围，再减少默认上下文和认知负担。
 
 ## questions
 
