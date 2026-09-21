@@ -44,3 +44,4 @@ AI 扩大低成本供给后，观众不会平均降低判断标准，反而会�
 - [真人拍的被骂 AI，AI 做的被骂廉价](https://mp.weixin.qq.com/s/IxVhVMxvbNQxil0DrtAbRw)
 - [AI面试：如果让你从零开发一个 AI 应用，你会怎么做？](https://mp.weixin.qq.com/s/4Jje4HQ1nRrdx1DWV24IEg)
 - [OpenClaw 2.0：欠下的技术债，这次连本带利还清](https://mp.weixin.qq.com/s/2ZmmCQelWs3r77U34XrAYg)
+- [这是一篇把“RSI”讲明白的科普级综述](https://mp.weixin.qq.com/s/rlfTKyWhALsNONhAwGih1A)

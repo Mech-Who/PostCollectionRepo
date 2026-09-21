@@ -44,3 +44,4 @@ Copilot 与 Autonomous 的差别不在界面，而在错误由谁承担。错误
 - [我用腾讯 Kuikly，把 DeepSeek Harness 装进了口袋](https://mp.weixin.qq.com/s/THtcdws01AV_Q3fe2pYRlQ)
 - [OpenClaw 2.0：欠下的技术债，这次连本带利还清](https://mp.weixin.qq.com/s/2ZmmCQelWs3r77U34XrAYg)
 - [揭秘｜数十亿场对局，会赢还不够？《洛克王国：世界》公开战斗AI](https://mp.weixin.qq.com/s/VKGT7E8Oc9AzevxDsvgjPw)
+- [这是一篇把“RSI”讲明白的科普级综述](https://mp.weixin.qq.com/s/rlfTKyWhALsNONhAwGih1A)
