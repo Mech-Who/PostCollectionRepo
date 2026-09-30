@@ -31,6 +31,7 @@ Pi 没有否定 MCP、子 Agent 或计划模式，只是不让所有用户在每
 
 - [[ai-boundary-first-intelligence]]：认知带宽优化必须服从权限、状态、错误代价和恢复边界，否则省略会变成不可见风险。
 - [[ai-verifiability-trust-tax]]：内容被压缩、隐藏或简化后，需要原件、来源、基准和契约证明结果仍可信。
+- [[game-experience-attention-timing]]：游戏设计同样面对有限注意力，但更强调玩家在连续时间中的操作、叙事和教学冲突。
 
 ## questions
 
