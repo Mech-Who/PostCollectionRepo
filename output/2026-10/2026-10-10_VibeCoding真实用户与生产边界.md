@@ -11,7 +11,8 @@ summary: "作者以转行创作者、演员和歌手使用AI开发产品为例�
 source_url: "https://mp.weixin.qq.com/s/2KdE9Bcmmq3Xv8CVSdiVig?scene=1&click_id=232759232"
 source: "weixin"
 status: "📥已采集"
-sync_si: "❌未同步"
+sync_si: ✅已同步
+siyuan_id: 20261010101923-wxwbkng
 sync_reason: "思源MCP list_notebooks返回fetch failed"
 extraction: "应用内浏览器读取页面正文"
 archive_format: "全文阅读后的结构化提炼及原文摘录，非逐字全文副本"
@@ -58,3 +59,4 @@ Local Storage里的UUID是低摩擦标识，不能可靠证明一个真人、阻
 ## 相关笔记
 - [[concepts/ai-boundary-first-intelligence]]：权限、状态与恢复边界。
 - [[concepts/ai-demand-delivery-loop]]：真实需求、交付与反馈闭环。
+
