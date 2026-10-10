@@ -1,0 +1,43 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>谷歌把自家游戏服务器管理系统开源了，教程用开源赛车做演示</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-10/2026-10-10_Agones游戏服务器管理.md" type="button">标为已读</button></nav><article data-key="2026-10/2026-10-10_Agones游戏服务器管理.md"><div class="meta"><span>2026-10-10</span><span class="tag">游戏开发</span><span class="tag">深度</span></div><h1>谷歌把自家游戏服务器管理系统开源了，教程用开源赛车做演示</h1><p class="article-summary">文章介绍Agones如何以Kubernetes资源和生命周期管理专用游戏服务器，覆盖待命池、分配、伸缩和监控。其工程价值在于把开服经验转为声明式配置，但状态语义、节省比例和社区信息需按官方资料复核。</p><h1>谷歌把自家游戏服务器管理系统开源了，教程用开源赛车做演示</h1>
+<blockquote>摘要：文章介绍Agones如何以Kubernetes资源和生命周期管理专用游戏服务器，覆盖待命池、分配、伸缩和监控。其工程价值在于把开服经验转为声明式配置，但状态语义、节省比例和社区信息需按官方资料复核。</blockquote>
+<p>来源作者：冰湖心科技；页面时间：2026-09-18 17:00。<br><a href="https://mp.weixin.qq.com/s/F0ywOULyC1PYrtj0QUR1lQ?scene=1&amp;amp;click_id=1438238900" target="_blank" rel="noreferrer">原文</a></p>
+<blockquote>此文为基于页面全文的结构化提炼，保留短摘录；不是原文逐字副本。图片、视频和图内数据未完整离线提取。</blockquote>
+<h2>内容脉络</h2>
+<p>文章认为联机游戏公司长期重复建设会话管理、部署脚本和人工扩缩容方案。专用服务器需要应对高峰与低谷差异，同时保证正在进行的对局不被粗暴中断。<br>Agones被介绍为Kubernetes上的游戏服务器管理组件，通过GameServer和Fleet等资源表达服务器与服务器池，用可版本化的YAML配置代替部分人工运维。文章以申请、就绪、分配、结束和回收串起服务器的一生。<br>官方教程以SuperTuxKart开源赛车演示联机房间，文中描述了申请云账号、建立集群、安装Agones、部署镜像、联机测试、观察监控和清理资源的顺序。Grafana面板用于观察控制器、扩缩容与对局指标。<br>文章还讨论社区采用、云厂商生态获客与开源协议，并把插件、游戏软件和基础设施视为不同层次的开源供给。</p>
+<h2>关键要点</h2>
+<ul>
+<li>游戏对局通常有状态，基础设施更新、缩容和维护必须尊重对局生命周期。</li>
+<li>声明式资源和版本管理有助于交接，减少知识只存在于个人经验中的风险。</li>
+<li>待命服务器、已分配服务器和节点容量要分别考虑；只改变池大小不等于节点资源立即下降。</li>
+<li>对局分配、健康检查、结束通知与监控，需要与游戏服务器程序及外部匹配流程协作。</li>
+</ul>
+<h2>可执行评估流程</h2>
+<p>以下是整理者的评估建议，不是原文的可直接运行命令。</p>
+<ol>
+<li>明确目标：并发对局、单局CPU/内存、启动时长、目标匹配等待时间与容错需求。</li>
+<li>按目标版本官方文档确认GameServer、Fleet、分配接口和伸缩器的职责及状态语义。</li>
+<li>用一个可复现的开源服务器样例验证启动、就绪、分配、结束、回收全过程。</li>
+<li>在测试环境验证更新、缩容和节点维护是否影响已分配对局；另测进程异常与健康检查。</li>
+<li>对比资源账单、运维时间和故障恢复成本，再决定是否值得引入Kubernetes运维复杂度。</li>
+</ol>
+<h2>我的理解</h2>
+<p>可迁移价值是把游戏进程的生命周期显式交给基础设施协调。它不自动解决匹配算法、游戏协议、反作弊或客户端同步。小团队应先比较托管服务与现有部署成本，避免为少量低并发对局增加整套集群负担。</p>
+<h2>原文摘录</h2>
+<blockquote>对局没打完，缩容不许碰它。</blockquote>
+<blockquote>现在整套配置是仓库里可版本化的 YAML 文件，新同事照着文档就能接管。</blockquote>
+<h2>证据边界与疑点</h2>
+<p>原文把Reserved描述为分配给玩家后的关键状态，同时使用Allocated，可能混淆状态职责，不能直接照搬实现。关于节点维护时“迁走对局”的说法，也不能理解为Agones自动支持正在进行的游戏状态热迁移。<br>文章开头称“七年过去”，后文又称“九年”，存在内部时间表述不一致。星数、版本、采用名单及CNCF治理归属本次均未独立核查。<br>节省一半账单的例子是粗算，取决于计费、装箱率、节点伸缩和预热池；不能当作可复现收益。许可证说明只是文章概述，实际使用仍应查看仓库LICENSE及通知义务。</p>
+<h2>相关笔记</h2>
+<ul>
+<li>[[concepts/ai-boundary-first-intelligence]]：权限、状态与恢复边界。</li>
+</ul><hr><a class="button" href="https://mp.weixin.qq.com/s/F0ywOULyC1PYrtj0QUR1lQ?scene=1&amp;click_id=1438238900" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>

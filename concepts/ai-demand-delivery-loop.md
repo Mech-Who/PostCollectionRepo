@@ -1,0 +1,26 @@
+---
+title: 需求到交付闭环
+status: review
+summary: AI降低实现门槛后，产品价值更多取决于是否理解具体用户、完成真实交付并根据反馈持续修正。
+thesis: 能做出东西不等于做对事情；真实场景、清晰验收、运行边界与复盘反馈共同决定个人或团队能否把工具能力转成长期价值。
+insights:
+### I1. 技术门槛下降会抬高需求判断门槛
+实现同质化后，用户是谁、何时使用、为何付费和失败由谁处理成为主要差异。
+### I2. 交付是学习的测量仪
+围绕真实任务学习会产生可观察反馈；脱离交付的知识积累很难判断是否解决了问题。
+### I3. 共创要求把用户从受众变成反馈与贡献节点
+作品、教程、插件和二次创作组成接力，但传播热度不能替代留存和结果。
+### I4. 个人产品也需要生产级边界
+配额、共享网络、测试隔离、恢复与不可值守约束，决定小产品能否在真实场景稳定运行。
+connections:
+- [[ai-boundary-first-intelligence]]
+- [[ai-verifiability-trust-tax]]
+questions:
+- Q24：如何在个人项目早期用最少指标验证真实需求而不是热梗传播？
+- Q25：AI协作开发的最小生产检查集应包含哪些环境和恢复测试？
+sources:
+- [马斯克随手一转，把B站多年的家底暴露了！](https://mp.weixin.qq.com/s/lvDDP34LNRfF34TICv-mfg)
+- [技术负责人给年轻人的忠告：单纯的技术没有价值，成功靠持续的做事](https://mp.weixin.qq.com/s/0WKougtiKT6LgDFlhjre0w?scene=1&click_id=1215673375)
+- [一群日本 AV 女优和歌手，正在偷家大厂 AI 产品经理](https://mp.weixin.qq.com/s/2KdE9Bcmmq3Xv8CVSdiVig?scene=1&click_id=232759232)
+tags: [真实需求, 交付, AI应用, 社区共创, 产品判断]
+---
