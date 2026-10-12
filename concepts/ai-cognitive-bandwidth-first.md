@@ -45,3 +45,13 @@ Pi 没有否定 MCP、子 Agent 或计划模式，只是不让所有用户在每
 - [一个游戏引擎作者，做出了今年最值得学的 AI Agent 框架](https://mp.weixin.qq.com/s/g1L_EeQk3WMR4X6KanKYpA)
 - [《软件设计的哲学》给 AI 时代程序员的启示](https://mp.weixin.qq.com/s/5wudGZ_f-Gkw7dfXNDTMPw)
 - [Anthropic 内部常用的 Skill，ELI5 用极简方式解释复杂概念](https://mp.weixin.qq.com/s/EPQrtLfiHSDH_MqLdtE00Q)
+
+## 2026-10-12 增量维护
+
+Karpathy 解读扩展到介质匹配：结构用图，参数关系用交互制品。前额叶科普补充减少通知、单任务和休息等环境线索。关联限于认知负担管理，不推断医学因果或疗效；复杂介质不一定更清晰。
+
+### related_articles
+
+- [输出介质与理解工具](../output/2026-10/2026-10-12_Karpathy输出介质与一次性理解工具.md)
+- [疲劳识别与注意力环境](../output/2026-10/2026-10-12_前额叶疲劳识别与注意力保养.md)
+

@@ -1,0 +1,129 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>程序员正在失去软件选择权！RedMonk联合创始人：Agent正在成为新的“Kingmakers”，开发者可能从决策者退成建议者</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-10/2026-10-12_Agent造王者与技术选择权.md" type="button">标为已读</button></nav><article data-key="2026-10/2026-10-12_Agent造王者与技术选择权.md"><div class="meta"><span>2026-10-12</span><span class="tag">AI应用</span><span class="tag">深度</span></div><h1>程序员正在失去软件选择权！RedMonk联合创始人：Agent正在成为新的“Kingmakers”，开发者可能从决策者退成建议者</h1><p class="article-summary">文章整理 Stephen O&#x27;Grady 的访谈与观点，指出 Agent 会在执行需求时默认选择语言、框架与依赖。开发者要通过可执行约束、决策记录和结果验收保留判断权，同时改造审查与发布瓶颈。</p><h1>Agent 造王者与技术选择权</h1>
+<blockquote><strong>摘要：</strong> Agent 不仅生成代码，也会填补技术选型的空白。作者强调开发者应明确边界、记录决策并验收结果；组织收益还取决于审查、集成和发布流程是否同步改善。</blockquote>
+<h2>我的理解</h2>
+<p>以下为 AI 分析，供用户审阅。</p>
+<p>“人在审批链中”不等于“人拥有判断权”。如果只能看到最终可运行结果，默认引入的依赖和外部服务就可能成为既成事实。保留选择权需要任务前的约束和任务后的证据，不能靠逐次确认所有小操作。</p>
+<p>把工具接口做完整也会改变产品竞争：当 Agent 是调用者，能力可发现、返回值可解释、失败可判断，比单纯增加聊天入口更直接。文章对行业迁移的判断属于趋势观点，不是已被统计验证的普遍事实。</p>
+<h2>关键要点</h2>
+<ul>
+<li><strong>技术选择可见化</strong>：语言、框架、依赖、版本、外部服务和数据流向都可能由 Agent 在执行中决定。</li>
+<li><strong>约束可执行化</strong>：依赖白名单、静态检查、架构测试和 CI 门禁，为自然语言规则提供验证。</li>
+<li><strong>人类职责</strong>：定义目标、拆任务、选择模型、设置权限、比较取舍、验收结果，对最终交付负责。</li>
+<li><strong>组织瓶颈</strong>：代码生成加快不必然让需求确认、PR 审查、集成测试或发布提速。</li>
+<li><strong>Agent Experience</strong>：完整 CLI／API／MCP、稳定错误返回、清楚权限和可靠示例影响工具被选择的机会。</li>
+</ul>
+<h2>可复用流程（AI 根据文章组织）</h2>
+<ol>
+<li>任务开始前列出允许技术栈、已有依赖、不可改变的边界和验收条件。</li>
+<li>对关键约束配置现有检查，记录 Agent 实际新增的依赖与服务及选择理由。</li>
+<li>验收功能、架构偏移、外部资源来源和失败恢复，按具体风险决定审批范围。</li>
+<li>统计从需求到上线各环节的等待和返工，改造当前瓶颈，避免单看生成速度。</li>
+</ol>
+<h2>证据边界</h2>
+<ul>
+<li>本文是中文翻译与整理，未直接核对访谈录音及 RedMonk 原文章节；保留其给出的 YouTube 来源。</li>
+<li>个人效率与企业收益的差异没有在本文给出可复核样本和测量口径。</li>
+<li>MLB 图片案例用于说明隐蔽资源决策，不据此断言具体法律责任。</li>
+<li>保存正文文字及图片说明，排除文末“好文链接”推荐。</li>
+</ul>
+<h2>原文</h2>
+<p>来源：<a href="https://mp.weixin.qq.com/s/zypmjJ9g0k4tNTJ_HQMm_w" target="_blank" rel="noreferrer">51CTO技术栈原文</a>。合并空行；图片见原文。</p>
+<p>编辑 | 姜篇</p>
+<p>Stephen O'Grady：开发者过去只是采购决定之后的执行者。</p>
+<p>Stephen O'Grady：我们已经进入了一个完全不同的软件世界。</p>
+<p>Stephen O'Grady：开发者正在从亲手施工的人，变成决定系统怎么建的人。</p>
+<p>十几年前，真正决定企业使用什么软件的人变了。</p>
+<p>开源和云服务绕过了采购流程。开发者不必先申请预算，就能试用Linux、MySQL和各种开发工具。一套技术能不能进入公司，开始取决于程序员愿不愿意用它。</p>
+<p>RedMonk联合创始人Stephen O'Grady把这批人称为“新造王者”。</p>
+<p>现在，选择权又在移动。</p>
+<p>开发者把需求交给Coding Agent之后，模型不只负责生成代码。语言用什么、引入哪套框架、依赖哪个库，甚至界面使用什么字体，它都可能顺手决定。</p>
+<p>Stephen最近重新谈起《The New Kingmakers》。他的判断很直接：新的“造王者”可能不再是开发者，而是Agent。</p>
+<p>这不等于程序员马上失去技术决策权。真正的分界线是，开发者还在设计约束、比较方案和验收结果，还是只剩下一个“同意修改”的按钮。</p>
+<p>备注：The Enterprise AI Show采访了Stephen O'Grady。他是开发者研究机构RedMonk的首席分析师、联合创始人，也是《The New Kingmakers》的作者。访谈谈到Agent做技术选型、开发者角色变化、企业效率为何没有同步提升，以及把系统权限交给Agent以后会出现什么风险。</p>
+<p>Stephen O'Grady回顾Coding Agent能力跃迁，称软件行业已经进入完全不同的世界</p>
+<p>以下为访谈与Stephen公开文章的内容，我们进行了翻译与整理。</p>
+<h3>开源把选型权交给开发者，Agent又把手伸了进来</h3>
+<p>2013年，Stephen写《The New Kingmakers》时，想解释一个已经发生、但不少管理者还没看懂的变化：企业采购部门不再独自决定技术栈。</p>
+<p>开源软件让开发者不花钱就能拿到操作系统、数据库和开发工具；云服务又把硬件成本拆成按需付费。程序员可以先把东西做出来，再让公司面对一个已经运行的事实。</p>
+<p>Stephen O'Grady回顾，开发者曾经只是企业采购决定后的执行者，开源和云服务改变了这种关系</p>
+<p>Stephen O'Grady解释，开源软件让开发者不必先申请预算，也能选择操作系统、数据库和工具</p>
+<p>Stephen O'Grady：“Agents: The new, New Kingmakers.”</p>
+<p>Stephen O'Grady：现在，Agent正在成为新的“造王者”。</p>
+<p>当年是开发者绕过采购部门选择软件。</p>
+<p>今天则是开发者把任务交给Agent，Agent在执行过程中替项目选软件。权力没有消失，只是又往执行任务的一方挪了一步。</p>
+<h3>语言、框架、依赖，Agent正在替你顺手决定</h3>
+<p>把“做一个后台页面”交给Agent，如果没有写清技术约束，它必须自己补齐大量空白：前端框架选什么，状态怎么管理，表格用哪个组件库，日期由哪个依赖处理，测试按什么结构组织。</p>
+<p>这些选择通常不会单独弹窗询问。它们直接出现在代码、配置文件和依赖清单里。</p>
+<p>Stephen在原文里甚至提到，Agent会决定：</p>
+<p>Stephen O'Grady：“Even the fonts in the user interface.”</p>
+<p>Stephen O'Grady：甚至连用户界面的字体也会替你选好。</p>
+<p>Stephen O'Grady在RedMonk文章中写道，Agent不只写代码，还会选择语言、库、框架和界面字体</p>
+<p>更麻烦的是，模型有时会使用开发者明确禁止的技术。代码能跑，测试也可能通过，但仓库里已经多了一套团队不愿维护的东西。</p>
+<p>所以，Agent时代的技术选型不能只写在会议纪要里。允许使用的运行时和依赖、禁止接入的服务、版本范围、安全许可证、数据能流向哪里，都要变成Agent能读取、工具能检查的规则。</p>
+<p>一条“不要引入新框架”的自然语言提醒很容易被忽略。依赖白名单、静态检查、架构测试和CI门禁更可靠。</p>
+<h3>开发者最后要守住的，是模型选择权</h3>
+<p>Stephen给开发者描绘了两种未来。</p>
+<p>乐观的版本里，Agent负责施工，开发者决定建什么、怎么建、哪些地方不能动。人仍然选择模型、拆任务、设置权限、比较方案，并对最终结果负责。</p>
+<p>Stephen O'Grady：“The optimistic answer... is emperors.”</p>
+<p>Stephen O'Grady：乐观地看，开发者不只是“王”，而会成为调度一组Agent的“皇帝”。</p>
+<p>另一种版本里，人只是Human in the loop。Agent给出方案，开发者扫一眼Diff，点一下批准。看上去人还在流程中，真正的技术判断却已经外包了。</p>
+<p>Stephen O'Grady用建筑作比，开发者将少做重复施工，更多决定系统结构和功能放在哪里</p>
+<p>Stephen O'Grady提醒，如果开发者只剩下Human in the loop，角色和影响力都会缩小</p>
+<p>保留决定权需要一些很具体的东西。</p>
+<p>每次任务都要说清验收条件；模型做出的架构和依赖选择要留下记录；高风险改动必须经过单独审批；Agent越权或连续失败时，要能停止并回滚。</p>
+<p>只会提示词的人不一定能守住这个位置。熟悉系统边界、能看懂失败信号、知道哪种取舍会留下长期债务的人，才有资格把施工交出去。</p>
+<h3>个人觉得自己变快，公司为什么没有同步提速</h3>
+<p>很多开发者使用Agent后，会明显感觉自己能完成更多工作。Stephen提到，个人调查里的反馈接近“超人”，组织层面的收益却没有同样明显。</p>
+<p>代码生成快了，后面的流程没有一起变快。需求还在等待确认，PR仍然要排队审查，集成测试依旧拥堵，发布窗口也没有增加。Agent把更多代码送进同一条管道，只会让瓶颈更清楚。</p>
+<p>Stephen O'Grady谈到，开发者觉得自己效率大增，企业却常常没有看到同等收益</p>
+<p>开源维护者已经先感受到另一面。生成代码和提交PR的成本下降后，维护者收到的补丁、功能请求和问题报告暴增。写代码的人省下了时间，审查的人却要替整个生态偿还。</p>
+<p>团队真正要改的，不只是给每位程序员买一个Agent。PR粒度、自动测试、代码所有权、发布策略和回滚能力也要重新设计。否则，Agent只会把队伍更快地推到旧瓶颈前。</p>
+<h3>软件公司以后还得让Agent“看得懂、调得动”</h3>
+<p>Stephen认为，软件产品会分成三类：主要给人使用的、主要给Agent调用的，以及同时服务两边的。</p>
+<p>Stephen O'Grady：“The real growth... in agents.”</p>
+<p>Stephen O'Grady：真正增长更快的部分，会来自Agent。</p>
+<p>Stephen O'Grady认为，人类界面与Agent专用服务都会存在，但数字Agent更容易快速扩张</p>
+<p>这会改变开发工具的竞争方式。过去，软件公司争取开发者，需要文档清楚、安装简单、社区活跃。现在还要考虑Agent能不能发现能力、读取规则、调用全部功能，并判断一次操作是否成功。</p>
+<p>给产品加一个聊天框不够。API只覆盖网页功能的10%，Agent就只能在剩下的90%里猜。</p>
+<p>CLI、API或MCP提供完整能力，错误返回稳定，权限边界清楚，示例代码能被可靠检索，这些都会影响Agent是否选择这款工具。</p>
+<p>Stephen把这种变化放到了“Agent Experience”里。未来的软件选型，可能同时发生两次：开发者先选择把哪些工具交给Agent，Agent再在任务里决定具体调用哪一个。</p>
+<h3>把系统钥匙交出去，最危险的未必是删库</h3>
+<p>让Agent能够调用更多工具，意味着它拿到的权限也更大。</p>
+<p>Stephen O'Grady：“Keys to the kingdom.”</p>
+<p>Stephen O'Grady：这相当于把系统王国的钥匙交给了Agent。</p>
+<p>Stephen O'Grady提醒，给Agent完整API和工具权限之后，安全边界比想象中更难设计</p>
+<p>他举了一个很小、却很能说明问题的例子。Stephen让Agent把一个道奇队数据项目改成红袜队版本。Agent为了让页面更真实，主动从MLB.com获取球员头像。</p>
+<p>页面变好了，麻烦也跟着来了：这些图片能不能这样使用，是否违反网站条款，版权责任算谁的？</p>
+<p>“不要删除数据库”很容易写成规则。不要从外部网站拿一张看似合适、实际没有授权的图片，就难得多。Agent越会自己找路，这类隐蔽决定越容易混进一个看起来完全正确的结果里。</p>
+<p>开发者的工作因此又多了一层：不只检查代码有没有Bug，还要检查Agent为了完成目标，究竟调用了什么、拿了什么数据、跨过了哪些边界。</p>
+<h3>讨论区：有人担心Agent缺少约束，也有人等着新工具爆发</h3>
+<p>这篇观点在LinkedIn上引出了两类讨论。</p>
+<p>有人认为，行业已经有了“不信任Agent”的沙箱，却还没有讲清楚Agent究竟听谁的、可以替谁做决定。也有人把问题落到工程形态上：一次性任务适合用完即销毁的沙箱，需要安装依赖、长期运行服务的Agent，则需要保留状态的环境。</p>
+<p>James Governor转发“Agent成为新造王者”后，LinkedIn用户讨论沙箱、长期状态和信任边界</p>
+<p>这位网友的意思是：一次性任务适合用完即销毁的沙箱；Agent如果要安装依赖、持续运行服务，就需要跨会话保存状态。两种环境都不能默认信任，真正影响选型的是任务要活多久。</p>
+<p>另一条讨论更接近团队管理：给Agent清楚目标、足够上下文和安全边界，然后允许它自己选择路径。人不必盯住每一步，但必须提前定义授权范围。</p>
+<p>网友讨论Agent做技术决策后，LinkedIn用户把重点放在目标、上下文、授权和责任上</p>
+<p>这位网友认为，团队应该给Agent明确目标、充分背景和安全边界，再让它自己完成工作，而不是盯着每一步操作。</p>
+<h3>写在最后</h3>
+<p>开发者并没有突然失去技术选择权，但“默认选择”正在变得危险。</p>
+<p>以前，一个团队不明确技术栈，成员会开会、争论，再做决定。现在，Agent会先替你补上空白，而且很快交出一个能运行的版本。等团队看见结果，语言、框架和依赖已经进了仓库。</p>
+<p>以后更重要的能力，不是和Agent比赛谁写得快，而是让技术选择变得可见、可解释、可撤销。哪些决定可以交给模型，哪些必须由人拍板，不能等代码生成以后再想。</p>
+<p>Agent可以成为新的“造王者”。开发者是否退位，要看那把选择权有没有主动交出去。</p>
+<p>参考链接：</p>
+<p><a href="https://www.youtube.com/watch?v=E6UFnW40BHQ&amp;amp;t=17s" target="_blank" rel="noreferrer">https://www.youtube.com/watch?v=E6UFnW40BHQ&amp;t=17s</a></p>
+<h2>相关笔记</h2>
+<ul>
+<li>[REA 逆向 Word 与功能验收](2026-10-12_REA逆向Word与功能复刻验收.md)</li>
+<li>[边界优先的智能系统](../../concepts/ai-boundary-first-intelligence.md)</li>
+<li>[可验证性信任税](../../concepts/ai-verifiability-trust-tax.md)</li>
+</ul><hr><a class="button" href="https://mp.weixin.qq.com/s/zypmjJ9g0k4tNTJ_HQMm_w" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>

@@ -1,0 +1,29 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>软件复刻证据与验收</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><h1>软件复刻证据与验收</h1>
+<h2>A — Applicable</h2>
+<p>评估 AI 复刻工具、学习目标软件的特定功能、规划受限功能原型。用于把宣传效果转成可检查的交付标准。</p>
+<h2>B — Boundary</h2>
+<p>不能用截图相似、作者的额度占比或主观覆盖率证明完整兼容或生产可用。原文未给出图片中的完整功能对照和可复现项目，未独立复测；不得将其推广成所有软件的复制成本。调查范围和素材使用须符合任务已授权边界。</p>
+<h2>C — Core</h2>
+<ol>
+<li>REA 的文章描述强调统一接入成熟分析工具；编排能力与底层反编译能力分开评估。</li>
+<li>把界面、行为、文档兼容和生产可靠性分别列为验收维度（AI 补充框架）。</li>
+<li>用功能清单和固定样例逐项验收，记录失败，不用“几轮迭代”代替完成标准。</li>
+<li>耗费额度的占比必须连同方案、周期和任务范围记录，不能直接跨案例比较。</li>
+<li>原文开头“原生 Word”被后文“尚未做成原生 App”限定；保存矛盾比替作者补全更可靠。</li>
+</ol>
+<h2>D — Data</h2>
+<p>原文安装命令，未运行、未独立验证：</p>
+<pre><code>npx rea-agents setup</code></pre>
+<p>原文任务示例：</p>
+<blockquote>弄清楚备忘录的搜索功能如何实现，列出证据，再在我的项目里做一个类似的功能。</blockquote>
+<p>可复用验收记录（AI 补充）：功能｜样例输入｜预期行为｜实际行为｜保存重开结果｜证据｜缺陷。</p><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>

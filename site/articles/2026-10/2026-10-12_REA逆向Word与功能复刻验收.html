@@ -1,0 +1,160 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>我居然用 GitHub 现象级项目 REA，逆向了 Microsoft Word</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-10/2026-10-12_REA逆向Word与功能复刻验收.md" type="button">标为已读</button></nav><article data-key="2026-10/2026-10-12_REA逆向Word与功能复刻验收.md"><div class="meta"><span>2026-10-12</span><span class="tag">AI应用</span><span class="tag">深度</span></div><h1>我居然用 GitHub 现象级项目 REA，逆向了 Microsoft Word</h1><p class="article-summary">作者使用 REA 与 Coding Agent 复刻 Word 的部分界面和常用编辑功能，认为成熟逆向工具的统一接入降低了开发门槛。文章同时承认功能缺失、交互瑕疵和生产级差距，不能据此认定完整替代 Word。</p><h1>我居然用 GitHub 现象级项目 REA，逆向了 Microsoft Word</h1>
+<blockquote><strong>摘要：</strong> 作者报告通过 REA 统一接入 MCP、Skill 与反编译工具，以少量迭代完成 Word 部分界面和常用功能的复刻。案例说明功能原型成本下降；完整格式兼容、长期维护和生产质量尚未获得验证。</blockquote>
+<h2>我的理解</h2>
+<p>以下为 AI 基于原文的分析，供用户审阅。</p>
+<p>REA 的价值在于让 Agent 组织现成逆向工具与调查流程。评估这类成果，应把界面还原、操作行为、文档兼容和生产可靠性分开验收。截图相似与基础功能可用只能支持前两项的部分结论。</p>
+<p>“开发成本降低”不能直接推出“商业软件失去价值”：支持、兼容、协作、数据与分发可能仍决定采购。作者没有给出可复现的完整测试数据，消费额度也不是可跨订阅比较的货币成本。</p>
+<h2>关键要点</h2>
+<ul>
+<li><strong>工具结构</strong>：文章将 REA 描述为 MCP 服务器、配套 Agent Skill 与命令行工具；复杂功能依赖 Hopper、Ghidra、IDA 等已有工具。</li>
+<li><strong>原文流程</strong>：接入工具 → 用自然语言提出功能调查任务 → Agent 读取结构、资源与符号并调查 → 迭代补齐功能。</li>
+<li><strong>作者报告的结果</strong>：基础文字格式、图片对齐、表格、批注及视图切换等；同时承认部分功能没有实现，选区存在重叠瑕疵。</li>
+<li><strong>建议验收步骤（AI 补充）</strong>：先列功能与样本文档，再记录实现证据，逐项测试行为与保存重开，最后检查格式兼容和恢复能力。</li>
+<li><strong>适用场景</strong>：功能学习、受限范围的原型评估；不能把该案例直接作为替代成熟办公软件的采购结论。</li>
+</ul>
+<h2>证据边界</h2>
+<ul>
+<li>开头称“原生 Word”，后文明言“还没有做成原生 App”，以其后文限定为准。</li>
+<li>“20%～30% 额度”“八成核心体验”“95% 截图功能”等是作者自报，未独立复测，也没有统一分母。</li>
+<li>8.6 万 Star、35 个版本和下载集中度为文章当时数据，未向项目仓库核实。</li>
+<li>部分关键提示词与功能对照仅在图片中；本次保存可见正文文字，未转录截图、GIF 或图片中的表格。</li>
+<li>原文提到的模型版本、订阅方案和安装命令均按原文保存，不表示已核实其当前可用性；本次未安装或运行 REA。</li>
+</ul>
+<h2>原文</h2>
+<p>来源： <a href="https://mp.weixin.qq.com/s/naysTEAxEyvdGxpcBEQd_A" target="_blank" rel="noreferrer">杉森楠原文</a>。下文保留正文文字，合并空行；图片请查看原文。</p>
+<p>刚刚，我让 AI 在完全没有源代码的情况下，尝试重新开发了一遍 Microsoft Word。</p>
+<p>结果有点出乎意料。</p>
+<p>只消耗了一个 Pro 级别 AI 会员约 20%～30% 的额度，就做出了一个界面几乎像素级还原、核心功能也基本一致的原生 Word。</p>
+<p>而完成这件事的，是最近在 GitHub 上爆火的逆向工程项目 REA。</p>
+<p>它让我开始意识到一件事：我们可能正在严重低估 AI 复刻成熟商业软件的能力。</p>
+<p>我拼接了个截图：</p>
+<p>先说下这个项目是什么。</p>
+<p>这个项目的名称叫做 REA，也就是 Reverse Engineer Anything，目前 8.6 万颗星。</p>
+<p>其实，REA 在今年 9 月之前就已经发布了，但当时几乎没有什么增长。</p>
+<p>直到 10 月初，项目的 GitHub Star 数才开始疯狂上涨，短短 10 天左右，就从几千增长到了 8 万以上。</p>
+<p>夸张的是，近一个月 99% 的下载量都集中在最近一周。</p>
+<p>项目的迭代速度也非常快，短短 5 天就发布了 6 个版本，截至目前累计发布了 35 个版本。</p>
+<p>这个项目的核心，就是让 AI Agent 帮我们研究一个软件内部到底是怎么工作的，即便没有它的源代码，也能进行分析。</p>
+<p>简单来说，只需要一句话，就有机会让 AI 逆向分析并复刻一款成熟的商业软件，或者其中某个具体功能。</p>
+<p>README 的宣传语是「看到一个喜欢的功能，就能弄懂它的实现，一直看到二进制层面」。</p>
+<p>官方已经为这个功能做了两次实测项目了，一个是 Notion （Electron 应用），另一个是 DX-Ball（一个老游戏）。</p>
+<p>为什么逆向复刻最近讨论得这么热？REA 这个项目又为什么会突然爆火？</p>
+<p>这里其实有一个很多人可能都会有的疑问：</p>
+<p>既然已经有一款成熟的生产级应用，为什么我们还要花时间去复刻它？</p>
+<p>因为 AI 时代的「逆向复刻」，正在从过去少数专业开发者才能完成的工作，变成一种普通开发者也有机会使用的产品开发方式。</p>
+<p>比如 Notion 的编辑器、Word 的排版功能，这些经过多年开发和优化的功能，背后往往有大量复杂的技术细节。</p>
+<p>如果完全从零开发，需要投入非常多的时间。</p>
+<p>而且，现在的 Opus 5.5、GPT-6、Astra 等模型已经展现出了很强的能力，也恰好为这类项目提供了强大的底层模型支持。</p>
+<p>接下来，我们就以 Microsoft Word 为例，看看 REA 是怎么一步步研究一个没有源代码的商业软件，最终把它复刻出来的。</p>
+<p>更重要的是，这个复刻版 Word，到底能用到什么程度？</p>
+<h3>REA 逆向项目到底怎么运作的？</h3>
+<p>首先，REA 其实就是一个 MCP 服务器加一套配套的 Agent Skill 和命令行工具。</p>
+<p>里面最核心的一点是 REA 项目其实分为 2 块：</p>
+<p>1）REA 项目的核心技术本身是复刻一些比较简单的应用的界面和简单功能。</p>
+<p>比如解读整个应用的界面，提取 Microsoft Word 的图标，观察整个窗口的结果，这几步是由 REA 自己完成的。</p>
+<p>2）Hopper、Ghidra、IDA 等反编译工具。</p>
+<p>这块其实有点「走捷径」的意思，因为 REA 调用的很多逆向工程工具，本身已经非常成熟了。</p>
+<p>比如，要追踪 Microsoft Word 里 SmartArt 的部分功能，或者查找替换等功能背后的代码逻辑，就可能需要借助 Hopper 这样的反编译工具，获取接近源代码的伪代码。</p>
+<p>但用户并不需要自己研究 Hopper，也不用专门编写提示词来指导它操作。REA 会根据当前的逆向任务，判断哪些部分可以用自身的工具完成，哪些需要调用 Hopper 等反编译工具。</p>
+<h3>使用教程</h3>
+<h4>1）一条命令接入 Agent</h4>
+<p>现在 REA 安装，可以一条命令就接入。</p>
+<pre><code>npx rea-agents setup</code></pre>
+<p>安装程序可以自动配置 17 个客户端，包括 Claude Code、Claude Desktop、Codex、Cursor、Gemini CLI、Windsurf、Devin、OpenCode、Antigravity、GitHub Copilot CLI、Qwen Code、VS Code、Grok Build 等。</p>
+<h4>2）用自然语言提出问题</h4>
+<p>安装好 REA 之后，我们就可以直接用自然语言描述想要复刻的功能了，比如：<br>「弄清楚备忘录的搜索功能如何实现，列出证据，再在我的项目里做一个类似的功能」。</p>
+<h4>Agent 自动完成调查</h4>
+<p>这时候，Agent 就可以在 REA 的指导下，自主打开目标应用，读取程序结构、字符串、符号和资源文件，搜索相关函数，并根据需要进行反编译等操作。</p>
+<h4>主要能力</h4>
+<p>REA 能吸引这么多人使用，一个重要原因就是它统一了不同逆向工程工具的接口。</p>
+<p>前面也提到过，REA 可以调用 Hopper、Ghidra、IDA 等反编译工具，但这些工具原本都有各自的接口和使用方式。</p>
+<p>REA 把它们统一封装成了同一套工具接口，让 AI Agent 不需要关心底层使用的是哪个分析引擎，就能直接调用相应的能力。</p>
+<h4>注意</h4>
+<p>如果想逆向复刻 Microsoft Word 这样比较复杂的生产级应用，通常还是需要用到 Hopper 这样的专业反编译工具。</p>
+<p>这里还有个我自己复刻时候的挺有意思的细节。</p>
+<p>如果通过 Claude Code 安装和使用 REA，Claude 可能会要求使用官方正版的 Hopper。但如果换成 Codex，就没事。</p>
+<p>Claude 的道德感确实是真强……</p>
+<h3>我逆向复刻的 Microsoft Word，长啥样？</h3>
+<p>首先，这个复刻版 Microsoft Word 的界面，几乎达到了与原版 Word 1:1 的像素级还原。</p>
+<p>目前，这个复刻版 Microsoft Word 已经具备了排序、标题设置、换行、文字加粗、批注等基础功能。</p>
+<p>从「开始」菜单栏，到「插入」「绘图」「设计」「布局」「引用」「邮件」「审阅」「视图」等，原版 Word 的基础功能模块也都保留了下来。</p>
+<p>包括在 Word 文档中自由调整图片大小，以及设置图片居中、居左、居右等对齐方式，这些功能也都实现了。</p>
+<p>包括选中某段文字后，添加下划线、删除线、高亮等操作，也基本都实现了。不过，这部分的交互和细节处理还是能看出一些粗糙的地方。</p>
+<p>像是调整某段文字的标题大小，以及套用一些 Word 自带的特殊样式和设计模板，这些功能也基本实现了。</p>
+<p>甚至还可以像原版 Word 一样，直接在文档中插入表格，整个操作体验也比较接近原生。</p>
+<p>像是 Word 里的专注模式，以及其他不同视图模式之间的切换，也都基本实现了。</p>
+<p>所以整体来看，原版 Microsoft Word 最基础、最核心的功能，在这次复刻中基本都实现了。</p>
+<h3>一些不得不说的问题</h3>
+<p>相信大家也很好奇，这次我用 Codex GPT-6 Astra 复刻 Microsoft Word，到底尝试了多少次？又用了什么样的提示词？</p>
+<p>下面就把整个过程分享给大家。</p>
+<p>首先，在使用 REA 复刻这个项目时，我只用了一句非常简单的提示词，没有添加任何额外的要求。</p>
+<p>其次也要说明一点，整个项目并不是只靠这一句提示词，就直接复刻出了前面展示的所有功能。</p>
+<p>实际上，我后续还让它迭代了大概两到三次，但每次都只是针对一些小功能和细节进行调整。</p>
+<p>第一版做出来的时候，其实已经比较完善了，核心功能基本都有，但界面还没有达到像素级还原的程度，也有不少功能没有实现。</p>
+<p>毕竟，AI 是真的很爱偷懒……</p>
+<p>所以后面我又进行了两到三轮迭代，主要就是补齐缺失的功能，以及进一步优化界面还原度。</p>
+<p>下面是目前这个复刻版 Microsoft Word 与本机原版 Word 的功能对照。可以看到，虽然核心功能基本实现了，但仍有相当一部分功能没有完整复刻。</p>
+<p>没有完整实现的一个原因，就是 AI 真的很爱偷懒。除非给它一套完整的自审开发清单，让它多轮调用子 Agent 检查、补齐功能，否则很难一次性做到完善。</p>
+<p>其次，REA 本身也算不上一个「革命性」的技术项目。它大量依赖 Hopper 等成熟的逆向工具，以及 AI 模型自身的能力。</p>
+<p>可以简单理解为，REA 给 AI 提供了一套 Skill 和工具调用流程，让 Agent 知道该如何完成逆向工程。</p>
+<p>具体到这次复刻的 Microsoft Word，很多功能其实还比较粗糙。原版 Word 的交互经过了数十年的打磨，才能达到今天这么流畅的体验。</p>
+<p>比如，当我同时选中两行文字时，就能明显看到两行之间的选中区域出现了重叠，这种细节还没有处理好。</p>
+<p>这其实是一个很典型的问题，AI 对这类细节算法的理解还不够好，需要经过多轮迭代才能逐步修复。</p>
+<p>类似的小问题还有不少。但客观来说，这次复刻的核心功能已经比较完整，界面还原度也很高，至少已经达到了可用的程度。</p>
+<p>相比一年前用 AI 开发出来的那些粗糙项目，现在的完成度确实高了很多。</p>
+<p>甚至我觉得，如果再迭代 10～20 轮，它完全有可能满足大部分人日常使用 Word 的需求，替代一部分原生 Word 的使用场景。</p>
+<p>再来说说大家可能更关心的额度消耗。</p>
+<p>这次我使用的是 Codex GPT-6 Astra，订阅的是 Pro 5X 会员。大家也知道，现在 Codex 的使用额度比较紧张，消耗速度也很快。</p>
+<p>但完成这样一个 Microsoft Word 逆向复刻项目，最终只消耗了我大约 20% 的使用额度。</p>
+<p>不过，目前这个复刻版 Microsoft Word 还没有做成原生 App，但它也不只是一个简单的前端项目。如果后续做成原生 App，在本地运行，日常使用基本不需要额外消耗 AI 额度。</p>
+<p>相比 REA 项目本身的技术突破，我其实更关注这次复刻背后反映出来的 AI 模型能力提升，以及由此带来的 3 个不得不说的问题。</p>
+<h4>1）「AI 复刻钱效比」</h4>
+<p>我们现在居然只需要消耗一个 Pro 级别 AI 会员大约 20%～30% 的额度，就有机会复刻出一款成熟商业软件的大部分核心体验。</p>
+<p>当然，这个复刻版 Word 还有很多不完善的地方，距离真正的生产级应用也有很大差距。</p>
+<p>但大部分普通用户平时使用 Word，无非就是写字、设置标题、调整字体、添加批注，再根据批注修改内容。</p>
+<p>而这些最基础、最关键的使用体验，在我这次实测中，已经复刻出了大约八成。</p>
+<p>所以，我想提出一个概念，叫做「AI 复刻钱效比」。</p>
+<p>简单来说，就是投入多少 AI 使用成本，能够复刻出一款成熟软件多少有实际价值的功能。</p>
+<p>以 Microsoft Word 为例，它从 1983 年发布至今，已经持续开发了 40 多年。微软虽然没有公开 Word 的累计研发投入，但背后积累的人力、资金和工程经验无疑是巨大的。</p>
+<p>当然，复刻部分功能和真正开发、维护一款商业软件，成本不能直接比较。</p>
+<p>但我们已经能看到一个重要变化。</p>
+<p>过去需要一个团队投入大量资源才能实现的功能，现在普通人借助 AI，就有机会以很低的成本复刻出来。</p>
+<p>而且，随着模型能力继续提升，「AI 复刻钱效比」还会越来越高。</p>
+<h4>2）垃圾 AI 产品，会以前所未有的速度被淘汰</h4>
+<p>当「AI 复刻钱效比」越来越高之后，很多粗糙的 AI 产品，可能会被迅速淘汰。</p>
+<p>因为现在大量 AI 产品，本质上还是在利用信息差赚钱。功能不复杂，体验也没有打磨好，只是提前告诉用户，原来 AI 还可以这样使用。</p>
+<p>但随着用户开始熟练使用 Claude Code、Codex、豆包工作、千问工作等 Agent，这种信息差会迅速消失。</p>
+<p>一款 AI 产品可能有 100 个功能，但真正吸引用户的，可能只有两三个。</p>
+<p>过去，用户需要为了这几个功能购买整款产品。但未来，可能只需要一个 Skill，就能重新实现自己需要的核心功能。</p>
+<p>甚至以后每当一个 AI 产品推出，里面真正有价值的功能，就可能迅速被复刻、封装成独立的 Skill，供其他 Agent 调用。</p>
+<p>这意味着，很多 AI 产品赖以生存的功能门槛，正在快速降低。</p>
+<h4>3）到底什么产品能有护城河？</h4>
+<p>这个问题，我觉得已经越来越难回答了。</p>
+<p>比如 Notion，REA 团队已经尝试逆向分析它的富文本编辑功能。而在 REA 出现之前，我自己就曾经用 AI 给 Obsidian 加上类似 Notion 的编辑体验。</p>
+<p>这说明，即便是成熟商业软件的核心功能，也已经有机会被单独复刻出来。</p>
+<p>那么，如果一款产品的优势是交互设计呢？</p>
+<p>大约一个月前，我曾经用 Claude Opus 5.5 复刻 CleanShot X。整个过程只是让 AI 自己操作原版软件、观察交互，再重新开发。</p>
+<p>最终，我认为它的截图功能已经复刻了大约 95%，虽然录屏等功能还没有充分迭代。</p>
+<p>所以，光靠优秀的交互设计，似乎也很难形成长期的技术壁垒。</p>
+<p>未来真正难以被 AI 复刻的，可能是那些核心价值不完全存在于软件代码里的产品。</p>
+<p>比如拥有庞大用户网络、独特数据、内容版权或复杂交易体系的产品。</p>
+<p>你可以复刻微信的聊天界面，却很难复制它的社交关系。也可以复刻淘宝的 App，却无法直接拥有背后的商家和交易网络。</p>
+<p>而对于大量纯软件产品来说，一个问题已经越来越难回避。</p>
+<p>当任何人都能以很低的成本复刻你的核心功能时，用户为什么还需要你的产品？</p>
+<p>这可能会成为未来几年，很多 AI 产品头顶上的达摩克利斯之剑。</p>
+<h2>相关笔记</h2>
+<ul>
+<li>[软件选择权与 Agent 约束](2026-10-12_Agent造王者与技术选择权.md)</li>
+<li>[功能复刻与商业护城河](2026-10-12_AI逆向与不可复制的持续关系.md)</li>
+<li>[可验证性信任税](../../concepts/ai-verifiability-trust-tax.md)</li>
+</ul><hr><a class="button" href="https://mp.weixin.qq.com/s/naysTEAxEyvdGxpcBEQd_A" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>

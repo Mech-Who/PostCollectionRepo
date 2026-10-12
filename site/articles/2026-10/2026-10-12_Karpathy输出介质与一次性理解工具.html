@@ -1,0 +1,119 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Karpathy大神又发新文！这次是教会你用AI学习……</title><style>
+:root{color-scheme:light;--ink:#18211d;--muted:#63706a;--paper:#f7f6f2;--panel:#fff;--line:#d9dedb;--accent:#176b52;--warm:#b7552a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:var(--accent);text-underline-offset:3px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:28px 0 22px;border-bottom:1px solid var(--line);background:var(--panel)}.top h1{margin:0;font-size:clamp(25px,4vw,38px);letter-spacing:0}.top p{margin:6px 0 0;color:var(--muted)}.progress{height:8px;margin-top:18px;background:#e5e8e5;overflow:hidden}.progress span{display:block;width:0;height:100%;background:var(--accent);transition:width .25s}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}.toolbar input,.toolbar select{min-height:42px;border:1px solid var(--line);background:#fff;padding:0 12px;font:inherit}.toolbar input{flex:1;min-width:220px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;padding-bottom:48px}.card{display:flex;flex-direction:column;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);padding:18px}.card.read{opacity:.63;border-left-color:#a3aaa6}.meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--muted);font-size:13px}.tag{border:1px solid var(--line);padding:1px 7px}.card h2{margin:10px 0 6px;font-size:20px;line-height:1.4}.card p{margin:0 0 16px;color:#46504b}.actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}.read-toggle{border:1px solid var(--line);background:#fff;color:var(--ink);min-height:36px;padding:0 10px;cursor:pointer}.empty{display:none;padding:40px 0;color:var(--muted)}article{width:min(780px,calc(100% - 32px));margin:36px auto 72px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,5vw,54px)}article h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:0;margin:.35em 0}article h2{margin-top:1.8em;font-size:25px;letter-spacing:0}article h3{margin-top:1.5em;font-size:20px;letter-spacing:0}article img{display:block;max-width:100%;height:auto;margin:22px auto}article pre{overflow:auto;background:#17201c;color:#ecf3ef;padding:16px}article code{font-family:ui-monospace,Consolas,monospace}article :not(pre)>code{background:#edf0ed;padding:2px 5px}blockquote{margin:20px 0;padding:8px 16px;border-left:4px solid var(--warm);background:#faf4ef;color:#4e4a47}.article-nav{width:min(780px,calc(100% - 32px));margin:24px auto 0;display:flex;justify-content:space-between;gap:12px}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 13px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer}.article-summary{font-size:18px;color:#46504b;border-bottom:1px solid var(--line);padding-bottom:20px}@media(max-width:560px){.wrap{width:min(100% - 20px,1120px)}.top{padding-top:20px}.toolbar>*{width:100%}article{width:100%;margin:0;border-width:1px 0;padding:22px 18px}.article-nav{width:calc(100% - 24px)}}
+</style></head><body><nav class="article-nav"><a class="button" href="../../index.html">返回目录</a><button class="read-toggle button" data-key="2026-10/2026-10-12_Karpathy输出介质与一次性理解工具.md" type="button">标为已读</button></nav><article data-key="2026-10/2026-10-12_Karpathy输出介质与一次性理解工具.md"><div class="meta"><span>2026-10-12</span><span class="tag">AI应用</span><span class="tag">深度</span></div><h1>Karpathy大神又发新文！这次是教会你用AI学习……</h1><p class="article-summary">文章整理 Karpathy 关于简化文字、图、HTML 与定制讲解视频的观点，主张以临时软件制品降低理解成本。输出介质按信息结构选择；文中补全的提示词不等于 Karpathy 原话。</p><h1>Karpathy 输出介质与一次性理解工具</h1>
+<blockquote><strong>摘要：</strong> 将 AI 解释从文字变成图、交互网页或动画，可以让部分问题更容易理解。低成本的定制制品可以只服务当前问题；仍需核对公式、假设和操作结果。</blockquote>
+<h2>我的理解</h2>
+<p>以下为 AI 分析，供用户审阅。</p>
+<p>“文字→图→网页→视频”不必理解为每一级都优于前一级。流程、静态结构、参数影响和时间演化适合不同介质；正确的图或简单表格，可能比复杂动画更快帮助理解。</p>
+<p>一次性理解工具的价值是降低当前认知成本，而不是形成需要长期维护的产品。先问一个可验证问题，再选择最少的交互，并用已知样例核对结果，避免把漂亮输出误当成正确答案。</p>
+<h2>关键要点</h2>
+<ul>
+<li>技术步骤：短句、主动语态、术语一致；英文受控语言规范不能直接照搬中文词数限制。</li>
+<li>结构和层级：图；参数变化：交互网页；动态抽象过程：动画／视频。</li>
+<li>指定输出形式比笼统要求“讲清楚”更可执行。</li>
+<li>Manim 加 TTS 是文中给出的视频路线，不是已验证的自动完成保证。</li>
+<li>制品是否值得做，可以按当前理解收益与制作、校验成本判断。</li>
+</ul>
+<h2>证据边界</h2>
+<ul>
+<li>本次读到的是公众号解读，没有定位并核对 Karpathy 原推文。</li>
+<li>文章明确说明 HTML 和视频的完整提示词由作者补全，不能作为原始引用。</li>
+<li>浏览、点赞、收藏与规范词典数量均按本文口径保存，未独立验证。</li>
+<li>文中“单文件、自包含”同时要求 Tailwind，需检查是否依赖外部 CDN；严格离线自包含时应内嵌样式。</li>
+<li>原文提示词中的 API key 只是文字示范，本次未索取、使用或写入任何凭据。</li>
+</ul>
+<h2>原文</h2>
+<h3>核心观点</h3>
+<p>同一个问题，你让 AI 直接说给你听，和让 AI 做给你理解，是两种量级完全不同的结果。</p>
+<p>Karpathy 这条推文表面上在分享几个提示词技巧，实际给出的是一条输出格式的升级阶梯：文字 → 图 → 网页 → 视频。每往上一级，你付出的理解成本就低一分。</p>
+<p>而阶梯的尽头，是一个值得记住的新概念——可丢弃的软件制品（discardable software artifacts）。它带来的真正变化是：判断标准从「这东西值不值得做」，变成了「这东西能不能帮我现在把这件事想明白」。</p>
+<h3>AI输出的四个层级</h3>
+<h4>1. 前提：未来大部分时间，花在「看懂 AI 的产出」上</h4>
+<p>推文第一句就定了调子：</p>
+<blockquote>We'll be spending a lot more time trying to understand the outputs of language models.</blockquote>
+<p>意思是：模型越强，它自主完成的活儿越多，人的工作就越往上游走，变成监督（oversight）和理解（understanding）。你不必亲手写每一行，但你必须看懂它在干什么。</p>
+<p>问题在于，「看懂」本身是有成本的。Karpathy 后面给的四个技巧，本质上都在解决同一件事：怎样让 AI 把同一个内容，表达成你更容易吸收的形式。</p>
+<h4>2. 第一级：让文字先「干净」下来</h4>
+<p>第一个技巧关于写作。</p>
+<p>Karpathy 的做法是：让模型用 ASD-STE100 来解释一件事。</p>
+<p>ASD-STE100 全称 Simplified Technical English（简化技术英语），是一套受控语言规范（controlled language specification）。上世纪 70 年代末，由欧洲航空航天工业协会（AECMA，今 ASD）应飞机制造商之需开发——飞机维修手册里一句话理解错，后果是灾难性的，所以必须有一套硬性规则，把歧义压到最低。</p>
+<p>这套规范的核心约束包括：</p>
+<ul>
+<li>一句话只讲一件事。程序性句子不超过 20 个词，描述性句子不超过 25 个词。</li>
+<li>一个词只有一个意思。词典里约 900 个词被批准使用，另有约 1200 个词被明确禁用，并给出替代词。</li>
+<li>用主动语态，不用被动语态。</li>
+<li>一段只讲一个主题。描述性段落不超过 6 句。</li>
+</ul>
+<p>（这套规范现在可以免费下载，官网是 asd-ste100.org。Karpathy 推文附的那张图，就是它的六格速览：文档结构、句子解剖、动词形式、词典条目、写作规则上限、发展史。）</p>
+<p>为什么这招对 LLM 有效？因为「请写清楚一点」是一句模糊指令，而「按 ASD-STE100 写」是一个成文、公开、有条目的硬约束。模型在训练数据里见过大量这类文本，所以它真的能照做。</p>
+<p>Karpathy 还补了一个实操细节：完整规范相当严苛，他自己经常退一步，只要「80% of the way to ASD-STE100」——八成符合就够了，不必逐条卡死。</p>
+<p>适用场景：技术原理、操作规程、避坑指南。凡是「说错一个字就要出事」的内容，都值得加上这个后缀。</p>
+<h4>3. 第二级：别让它写，让它画</h4>
+<p>第二个技巧是换介质。</p>
+<p>Karpathy 说：与其让模型写，不如让它画一张图。理由很直接——</p>
+<blockquote>These can be a lot easier to process, parse, and understand.</blockquote>
+<p>文字是线性的：你必须从第一个字读到最后一行，顺序解码。图是并行的：结构可以一眼看见，层级、依赖、分支同时进入视野。</p>
+<p>所以当你要理解的是一个结构，而不是一条流程时，图几乎是碾压性的选择。</p>
+<h4>4. 第三级：要一个能点的网页</h4>
+<p>第三个技巧是升级交互。</p>
+<p>他的原话很朴素：Ask for output "in HTML"。</p>
+<p>一句「用 HTML 输出」，你拿到的不再是一段描述，而是一个能打开的网页——可以拖的滑块、可以点的按钮、会动的动画。</p>
+<p>为什么这是质变？因为文字和图都是「读」的，网页是「操作」的。当你面对的是一个参数敏感的问题——比如某个公式里改一个系数、整条曲线怎么变——写十段文字解释，都不如给你一根滑杆自己拖两下。</p>
+<p>Karpathy 顺带给了一句判断：LLM 的前端能力正在快速变好，已经能做出「beautiful」的体验和动画。</p>
+<h4>5. 第四级：要一支讲解视频</h4>
+<p>第四个技巧，是 Karpathy 明确说最看好的那个（the output format I am most bullish on）。</p>
+<p>要什么？完全定制的讲解视频——针对任何一个临时想到的题目，现做一支。</p>
+<p>他给的原话示范是：</p>
+<blockquote>Create a 3b1b style video explainer on X. Use my ElevenLabs API key for audio narration.</blockquote>
+<p>（3b1b 指 3Blue1Brown，Grant Sanderson 那个用动画讲数学的知名频道。）</p>
+<p>做法大致是：让模型写一份 Manim 动画脚本（3Blue1Brown 本人就是用它做视频的），再配上语音旁白。旁白这一步需要 TTS 服务，推文里提的是 ElevenLabs 的 API key；如果没有，他也给了退路——让模型自己去找跑在本地算力上的免费替代方案（本地 TTS 这类工具直接问模型就行）。</p>
+<p>而整条推文里最有分量的一句，是最后那个括号里的感叹：</p>
+<blockquote>This is actually starting to work!</blockquote>
+<p>这件事，真的开始跑得通了。</p>
+<h3>三个可以直接复制的提示词后缀</h3>
+<p>把上面几级整理成可以直接粘贴的版本。需要说明的是：推文里的原话只到「in HTML」和「3b1b style … ElevenLabs API key」，下面是把它补全成可执行的完整指令。</p>
+<p>① 文本极简（ASD-STE100）</p>
+<pre><code>Explain this in ASD-STE100, or 80% of the way to ASD-STE100 specification.</code></pre>
+<p>适用：技术原理、操作规程、避坑指南。强行压制模型的倒装、套话和形容词堆砌。</p>
+<p>② 交互网页（单文件 HTML）</p>
+<pre><code>Output as a single self-contained HTML file with Tailwind CSS and interactive JS sliders/animations, no build step.</code></pre>
+<p>适用：参数敏感型模型、多变量对比、系统架构展示。</p>
+<p>③ 动态讲解视频（3b1b 风格）</p>
+<pre><code>Create a 3b1b-style video explainer on this topic using Manim Python script. Use my ElevenLabs API key for audio narration or suggest a local TTS alternative.</code></pre>
+<p>适用：抽象数学、底层算法、高维拓扑概念。</p>
+<h3>真正的底层：可丢弃的软件制品</h3>
+<p>前面几节讲的是技巧，这条推文的落点是判断。</p>
+<p>Karpathy 的原话：</p>
+<blockquote>As intelligence and code are increasingly abundant, you can ask for large, custom, discardable software artifacts (e.g. web apps, video explainers) that would have never made sense to create before.</blockquote>
+<p>翻译过来：当智能和代码都变得过剩，你就可以索要那种大型的、定制的、用完就扔的软件制品——网页应用也好，讲解视频也好——而在过去，做这些东西根本不合理。</p>
+<p>「不合理」在哪？因为过去做一个小工具，要先立项、选型、配环境、写、测、维护。成本远远大于收益。所以「为了搞懂一个问题，专门做一个软件」这件事，从来就不划算。</p>
+<p>现在制作成本趋近于零，这笔账反过来了。于是判断标准也跟着变：</p>
+<ul>
+<li>以前问：这东西值不值得做？（不值得，成本太高）</li>
+<li>现在问：这东西能不能帮我现在把这件事想明白？（能，那就做）</li>
+</ul>
+<p>「用完就扔」不是浪费。它本来就是一次性的理解工具——做出来是为了看懂，看懂了，它的使命就结束了。</p>
+<p>这也正好接回推文开头那句：人的工作往上升，变成监督和理解。而理解恰恰是最稀缺的——所以让 AI 帮你批量制造理解工具，是目前性价比最高的用法。</p>
+<h3>结语与行动建议</h3>
+<p>这条推文的数据很能说明问题：发布一天多，552 万次浏览、4.69 万次点赞、5,335 次转发——而收藏数（6.76 万）比点赞还多。收藏远高于点赞，是典型的「工具帖」特征：大家不是觉得说得好，是打算回头照着做。</p>
+<p>三个可以立刻用起来的动作：</p>
+<ol>
+<li>下次提问，别只描述任务，指定输出格式。在提示词结尾加一句「用 HTML 输出」或者「用图说明」，成本是一个句子，收益是理解的难度直接降一档。</li>
+<li>按内容类型选格式。要流程和规范 → 用 ASD-STE100 后缀；要结构和层级 → 要图；要调参数看变化 → 要网页；要讲抽象的、动态的、有时间轴的东西 → 要视频。</li>
+<li>允许自己「做一个用完就扔的东西」。花十分钟让 AI 生成一个只服务于当前这一个问题的网页，看完就删掉。这不是浪费算力，这是把算力换成理解力。</li>
+</ol>
+<p>最后记住推文的收尾那句：Push the boundaries here and you'll be surprised.</p>
+<h2>相关笔记</h2>
+<ul>
+<li>[认知带宽优先](../../concepts/ai-cognitive-bandwidth-first.md)</li>
+<li>[可验证性信任税](../../concepts/ai-verifiability-trust-tax.md)</li>
+<li>[AI 架构设计与调研验真](2026-10-12_AI架构设计四步与调研验真.md)</li>
+</ul><hr><a class="button" href="https://mp.weixin.qq.com/s?__biz=MzcxMDQ1MTExMA==&amp;mid=2247483789&amp;idx=1&amp;sn=69a728c70f5b067eab9617de6f54e45e" target="_blank" rel="noreferrer">阅读原文（weixin）</a></article><script>
+const STORE='postcollection-read-v1';
+const readSet=()=>new Set(JSON.parse(localStorage.getItem(STORE)||'[]'));
+const save=s=>localStorage.setItem(STORE,JSON.stringify([...s]));
+function updateProgress(){const cards=[...document.querySelectorAll('[data-key]')],read=readSet();cards.forEach(c=>{const yes=read.has(c.dataset.key);c.classList.toggle('read',yes);const b=c.querySelector('.read-toggle');if(b)b.textContent=yes?'标为未读':'标为已读'});const done=cards.filter(c=>read.has(c.dataset.key)).length,total=cards.length,pct=total?Math.round(done/total*100):0;const label=document.querySelector('#progress-label');const bar=document.querySelector('#progress-bar');if(label)label.textContent=`已读 ${done}/${total}（${pct}%）`;if(bar)bar.style.width=pct+'%'}
+function toggle(key){const s=readSet();s.has(key)?s.delete(key):s.add(key);save(s);updateProgress()}
+function filterCards(){const q=(document.querySelector('#search')?.value||'').toLowerCase(),cat=document.querySelector('#category')?.value||'';let shown=0;document.querySelectorAll('.card').forEach(c=>{const yes=(!q||c.textContent.toLowerCase().includes(q))&&(!cat||c.dataset.category===cat);c.hidden=!yes;if(yes)shown++});const empty=document.querySelector('#empty');if(empty)empty.style.display=shown?'none':'block'}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.read-toggle').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.key)));document.querySelector('#search')?.addEventListener('input',filterCards);document.querySelector('#category')?.addEventListener('change',filterCards);updateProgress()});
+</script></body></html>

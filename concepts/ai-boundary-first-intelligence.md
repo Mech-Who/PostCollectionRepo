@@ -45,3 +45,18 @@ Copilot 与 Autonomous 的差别不在界面，而在错误由谁承担。错误
 - [OpenClaw 2.0：欠下的技术债，这次连本带利还清](https://mp.weixin.qq.com/s/2ZmmCQelWs3r77U34XrAYg)
 - [揭秘｜数十亿场对局，会赢还不够？《洛克王国：世界》公开战斗AI](https://mp.weixin.qq.com/s/VKGT7E8Oc9AzevxDsvgjPw)
 - [这是一篇把“RSI”讲明白的科普级综述](https://mp.weixin.qq.com/s/rlfTKyWhALsNONhAwGih1A)
+
+## 2026-10-12 增量维护
+
+架构四步说明边界形成顺序：明确需求、验证调研、安排组件与迭代。Agent 选型文章要求边界可检查。跑团案例提醒叙述、状态和规则裁决是不同职责，不能以迎合玩家的故事替代随机性。
+
+### related_articles
+
+- [Agent 技术选择权](../output/2026-10/2026-10-12_Agent造王者与技术选择权.md)
+- [架构调研验真](../output/2026-10/2026-10-12_AI架构设计四步与调研验真.md)
+- [AI 主持人边界](../output/2026-10/2026-10-12_跑团Replay游戏化与AI主持人边界.md)
+
+### connections
+
+- [代码供给与价值捕获分离](ai-supply-value-separation.md)：技术能力外包后，关键选择与责任边界影响人的判断权。
+

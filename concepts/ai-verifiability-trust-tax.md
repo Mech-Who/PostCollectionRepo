@@ -45,3 +45,19 @@ AI 扩大低成本供给后，观众不会平均降低判断标准，反而会�
 - [AI面试：如果让你从零开发一个 AI 应用，你会怎么做？](https://mp.weixin.qq.com/s/4Jje4HQ1nRrdx1DWV24IEg)
 - [OpenClaw 2.0：欠下的技术债，这次连本带利还清](https://mp.weixin.qq.com/s/2ZmmCQelWs3r77U34XrAYg)
 - [这是一篇把“RSI”讲明白的科普级综述](https://mp.weixin.qq.com/s/rlfTKyWhALsNONhAwGih1A)
+
+## 2026-10-12 增量维护
+
+Word 复刻缺少完整兼容测试，前后对原生 App 的说法不一致。架构推荐须作为待验证线索，互动制品需核对正确性。分别保存作者自报、原始引用、改写提示词与 AI 补充，并提供来源和固定验收样例。
+
+### related_articles
+
+- [REA 复刻验收](../output/2026-10/2026-10-12_REA逆向Word与功能复刻验收.md)
+- [架构调研验真](../output/2026-10/2026-10-12_AI架构设计四步与调研验真.md)
+- [理解工具](../output/2026-10/2026-10-12_Karpathy输出介质与一次性理解工具.md)
+- [Agent 选择权](../output/2026-10/2026-10-12_Agent造王者与技术选择权.md)
+
+### connections
+
+- [代码供给与价值捕获分离](ai-supply-value-separation.md)：可生成不等于可信交付，验证可能影响价值归属。
+

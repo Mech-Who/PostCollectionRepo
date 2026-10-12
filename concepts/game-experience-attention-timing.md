@@ -37,3 +37,17 @@ source_count: 3
 - [《弃子》玩法与叙事分析](https://mp.weixin.qq.com/s/1A8G0J4AYLlhoPQH_3bzzw)
 - [《赛菲莉娅》长线留存设计](https://mp.weixin.qq.com/s/JJcw4VOTwOCA-DVDeMsMhw)
 - [游戏写作和叙事课程的设计框架](https://mp.weixin.qq.com/s/Tk1XV54832Rt9drF-YOdDA)
+
+## 2026-10-12 增量维护
+
+艾希报道补充关键记忆可能跨多年影响支持的案例。跑团 Replay 说明体验进入视频和游戏后，受众、节奏和自由度会变化，内部趣味需要转成可理解的故事。两文未产生新的可量化注意力阈值。
+
+### related_articles
+
+- [玩家记忆与众筹](../output/2026-10/2026-10-12_艾希续众筹与玩家记忆信任.md)
+- [Replay 改编](../output/2026-10/2026-10-12_跑团Replay游戏化与AI主持人边界.md)
+
+### connections
+
+- [代码供给与价值捕获分离](ai-supply-value-separation.md)：被记住的体验可能转化为信任，新承诺仍需履约。
+
