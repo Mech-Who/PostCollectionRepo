@@ -60,4 +60,3 @@ Word 复刻缺少完整兼容测试，前后对原生 App 的说法不一致。�
 ### connections
 
 - [代码供给与价值捕获分离](ai-supply-value-separation.md)：可生成不等于可信交付，验证可能影响价值归属。
-

@@ -59,4 +59,3 @@ Copilot 与 Autonomous 的差别不在界面，而在错误由谁承担。错误
 ### connections
 
 - [代码供给与价值捕获分离](ai-supply-value-separation.md)：技术能力外包后，关键选择与责任边界影响人的判断权。
-

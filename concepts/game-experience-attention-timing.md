@@ -50,4 +50,3 @@ source_count: 3
 ### connections
 
 - [代码供给与价值捕获分离](ai-supply-value-separation.md)：被记住的体验可能转化为信任，新承诺仍需履约。
-

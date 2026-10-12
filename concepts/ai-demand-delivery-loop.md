@@ -37,4 +37,3 @@ tags: [真实需求, 交付, AI应用, 社区共创, 产品判断]
 ### connections
 
 - [代码供给与价值捕获分离](ai-supply-value-separation.md)：闭环解释如何创造价值，新概念解释收益可能被谁获得。
-
