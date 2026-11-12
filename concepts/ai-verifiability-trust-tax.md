@@ -70,3 +70,5 @@ Word 复刻缺少完整兼容测试，前后对原生 App 的说法不一致。�
 
 游戏提案属于证据框架的跨领域迁移，不构成原AI概念的实证验证。
 
+
+- [Claude Fable 5.2与代码驱动的创作](https://mp.weixin.qq.com/s/zgBGhOsuh6Z_5Enmzos3rQ)：生成案例需要保留工具、素材与人工干预等可验证过程。
